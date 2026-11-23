@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage notifications | CivicEvents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen flex flex-col">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="app-header"></div>
+
+  <main id="main" tabindex="-1" class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <!-- ROLE GUARD (page): admin only, enforced by Auth.requireAdmin() in admin-notifications.js -->
+    <div class="grid gap-6 lg:gap-10 lg:grid-cols-[190px_1fr]">
+      <div id="admin-sidebar"></div>
+      <div class="min-w-0">
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Notifications</h1>
+        <p class="text-muted mt-1 max-w-prose">Notifications sent to everyone, plus any sent to you. Deleting one removes it for every user.</p>
+
+        <div class="card p-4 mt-6 border-l-4 border-l-signal text-sm">
+          New broadcast notifications are sent automatically when you publish an event, announcement or promo. The API doesn't offer a way to write a custom notification.
+        </div>
+
+        <form id="notif-form" class="mt-6" novalidate>
+          <div class="card p-4 flex flex-wrap items-end gap-4">
+            <div>
+              <label for="type" class="label">Type</label>
+              <select id="type" class="input w-auto">
+                <option value="all">All types</option>
+                <option value="event">Events</option>
+                <option value="announcement">Announcements</option>
+                <option value="promo">Promos</option>
+              </select>
+            </div>
+            <button id="delete-selected" type="submit" class="btn btn-danger ml-auto" disabled>Delete selected</button>
+          </div>
+          <p id="results-count" tabindex="-1" class="text-sm text-muted mt-6 mb-3" aria-live="polite"></p>
+          <div id="notifs"></div>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/pages/admin-notifications.js"></script>
+</body>
+</html>

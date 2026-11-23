@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Users | CivicEvents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen flex flex-col">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="app-header"></div>
+
+  <main id="main" tabindex="-1" class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <!-- ROLE GUARD (page): admin only, enforced by Auth.requireAdmin() in admin-users.js -->
+    <div class="grid gap-6 lg:gap-10 lg:grid-cols-[190px_1fr]">
+      <div id="admin-sidebar"></div>
+      <div class="min-w-0">
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Users</h1>
+        <p class="text-muted mt-1 max-w-prose">Enable or disable accounts. Disabled users are signed out and can't use the app. Roles can't be changed from here.</p>
+
+        <div class="card p-4 mt-6 grid gap-4 sm:grid-cols-[1fr_auto] items-end" role="search">
+          <div>
+            <label for="search" class="label">Search this page</label>
+            <input id="search" type="search" class="input" placeholder="Name or email">
+          </div>
+          <div>
+            <label for="status" class="label">Status</label>
+            <select id="status" class="input">
+              <option value="all">All</option>
+              <option value="active">Active</option>
+              <option value="disabled">Disabled</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="results-count" tabindex="-1" class="text-sm text-muted mt-6 mb-3" aria-live="polite"></p>
+        <div id="users"></div>
+        <nav id="pager" aria-label="User pages" class="mt-6 flex items-center justify-between gap-2"></nav>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/pages/admin-users.js"></script>
+</body>
+</html>
