@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My registrations | CivicEvents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen flex flex-col">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="app-header"></div>
+
+  <main id="main" tabindex="-1" class="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">My registrations</h1>
+    <p class="text-muted mt-1">Events you've signed up for. Cancel here if your plans change.</p>
+
+    <div role="tablist" aria-label="Registrations" class="mt-6 flex gap-1 border-b border-ink/15 overflow-x-auto">
+      <button role="tab" id="tab-upcoming" data-tab="upcoming" aria-selected="true" aria-controls="list" class="tab px-4 py-2 text-sm font-semibold border-b-2 -mb-px whitespace-nowrap">Upcoming <span data-count="upcoming"></span></button>
+      <button role="tab" id="tab-past" data-tab="past" aria-selected="false" aria-controls="list" tabindex="-1" class="tab px-4 py-2 text-sm font-semibold border-b-2 -mb-px whitespace-nowrap">Past <span data-count="past"></span></button>
+      <button role="tab" id="tab-cancelled" data-tab="cancelled" aria-selected="false" aria-controls="list" tabindex="-1" class="tab px-4 py-2 text-sm font-semibold border-b-2 -mb-px whitespace-nowrap">Cancelled <span data-count="cancelled"></span></button>
+    </div>
+    <div id="list" role="tabpanel" aria-labelledby="tab-upcoming" tabindex="0" class="mt-6"></div>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/pages/my-registrations.js"></script>
+</body>
+</html>
