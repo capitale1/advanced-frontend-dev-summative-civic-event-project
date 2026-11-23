@@ -5,7 +5,7 @@
 
 .skip-link {
   position: absolute; left: 1rem; top: -3rem; z-index: 100;
-  background: #F2C14E; color: #1B2A41; font-weight: 700;
+  background: #F2C14E; color: #173D30; font-weight: 700;
   padding: .5rem 1rem; border-radius: .375rem;
 }
 .skip-link:focus { top: 1rem; }
@@ -23,9 +23,9 @@
 .date-sign {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   width: 3.75rem; padding: .35rem 0 .45rem;
-  background: #1B2A41; color: #fff; border-radius: .375rem;
+  background: #173D30; color: #fff; border-radius: .375rem;
   border-top: 4px solid #F2C14E;
-  box-shadow: 0 2px 0 rgba(27, 42, 65, .25);
+  box-shadow: 0 2px 0 rgba(23, 61, 48, .25);
   line-height: 1;
 }
 .date-sign .month { font-size: .75rem; font-weight: 600; color: #F2C14E; }

@@ -18,7 +18,7 @@ const Layout = (function () {
   ];
 
   const ICONS = {
-    logo: '<svg aria-hidden="true" viewBox="0 0 32 32" class="h-8 w-8"><rect width="32" height="32" rx="6" fill="#F2C14E"/><path d="M15 6h2v20h-2z" fill="#1B2A41"/><path d="M8 9h13l3 3-3 3H8z" fill="#1B2A41"/><path d="M24 17H11l-3 3 3 3h13z" fill="#1F6F5C"/></svg>',
+    logo: '<svg aria-hidden="true" viewBox="0 0 32 32" class="h-8 w-8"><rect width="32" height="32" rx="6" fill="#F2C14E"/><path d="M15 6h2v20h-2z" fill="#173D30"/><path d="M8 9h13l3 3-3 3H8z" fill="#173D30"/><path d="M24 17H11l-3 3 3 3h13z" fill="#1F6F5C"/></svg>',
     bell: '<svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>',
     menu: '<svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>',
     close: '<svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',

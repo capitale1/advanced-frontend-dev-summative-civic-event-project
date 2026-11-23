@@ -19,7 +19,7 @@ $(function () {
   Layout.init('dashboard');
   $('#admin-sidebar').html(Layout.adminSidebar('overview'));
 
-  const COLORS = { civic: '#1F6F5C', signal: '#F2C14E', ink: '#1B2A41', grey: '#C3CCC8' };
+  const COLORS = { civic: '#1F6F5C', signal: '#F2C14E', ink: '#173D30', grey: '#C3CCC8' };
   const $stats = $('#stats');
   const $charts = $('#charts');
   let previous = null;
@@ -184,7 +184,7 @@ $(function () {
     const content = [
       { label: 'Events', value: s.events, color: COLORS.civic },
       { label: 'Announcements', value: s.announcements, color: COLORS.signal },
-      { label: 'Promos', value: s.promos, color: COLORS.ink }
+      { label: 'Promos', value: s.promos, color: COLORS.grey }
     ];
     const engagement = [
       { label: 'Registrations', value: s.registrations, color: COLORS.civic },

@@ -7,7 +7,7 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        ink: '#1B2A41',
+        ink: '#173D30',
         civic: { DEFAULT: '#1F6F5C', dark: '#17574A', light: '#E3F1EC' },
         signal: '#F2C14E',
         paper: '#F5F7F6',
