@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CivicEvents</title>
+</head>
+<body>
+  <noscript>CivicEvents needs JavaScript turned on. <a href="login.html">Go to sign in</a>.</noscript>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script>
+    // Entry point: admins go to the dashboard, users to events, everyone else to sign in.
+    if (!Auth.isLoggedIn()) window.location.replace('login.html');
+    else window.location.replace(Auth.isAdmin() ? 'dashboard.html' : 'events.html');
+  </script>
+</body>
+</html>

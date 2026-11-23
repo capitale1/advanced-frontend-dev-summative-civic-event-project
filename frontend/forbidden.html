@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No access | CivicEvents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen flex flex-col">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="app-header"></div>
+
+  <!-- Shown when Auth.requireAdmin() blocks a normal user (ROLE GUARD) -->
+  <main id="main" class="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 py-16">
+    <div class="card p-8 border-t-4 border-t-signal">
+      <h1 class="text-3xl font-extrabold">This page is for administrators</h1>
+      <p class="text-muted mt-3">Your account doesn't have access to it. If you think you need access, ask a CivicEvents administrator.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <a href="events.html" class="btn btn-primary">Go to events</a>
+        <a href="mailto:help@civicevents.example?subject=Access%20request" class="btn btn-secondary">Contact an administrator</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script>
+    $(function () {
+      if (!Auth.requireAuth()) return;
+      Layout.init('');
+    });
+  </script>
+</body>
+</html>
