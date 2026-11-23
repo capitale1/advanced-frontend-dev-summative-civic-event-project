@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New announcement | CivicEvents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen flex flex-col">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="app-header"></div>
+
+  <!-- ROLE GUARD (page): admin only, enforced by Auth.requireAdmin() in announcement-form.js -->
+  <main id="main" tabindex="-1" class="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <a id="back-link" href="announcements.html" class="text-sm font-semibold text-civic hover:underline">&larr; All announcements</a>
+    <h1 id="form-title" class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-3">New announcement</h1>
+    <p class="text-muted mt-1">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+
+    <form id="media-form" class="card p-5 sm:p-8 mt-6 space-y-6" novalidate>
+      <div data-form-alert role="alert" class="hidden rounded-md border border-danger/30 bg-red-50 text-danger px-4 py-3 text-sm"></div>
+
+      <div>
+        <label for="title" class="label">Title <span aria-hidden="true" class="text-danger">*</span></label>
+        <input id="title" name="title" type="text" maxlength="200" required class="input">
+        <p id="title-error" class="field-error hidden"></p>
+      </div>
+
+      <div>
+        <span class="label" id="file-label">Audio file <span id="file-required" aria-hidden="true" class="text-danger">*</span></span>
+        <div id="file-preview" class="rounded-md border-2 border-dashed border-ink/20 bg-paper p-4 text-sm text-muted text-center">No file selected</div>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <input id="file" name="audio" type="file" accept=".mp3,.wav,.m4a,.ogg,audio/*" class="sr-only peer" aria-labelledby="file-label" aria-describedby="file-help file-error">
+          <label for="file" class="btn btn-secondary cursor-pointer peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-signal">Choose file</label>
+          <button id="file-clear" type="button" class="btn btn-secondary hidden">Remove</button>
+        </div>
+        <p id="file-help" class="text-xs text-muted mt-2">MP3, WAV, M4A or OGG, up to 5 MB.</p>
+        <p id="file-error" class="field-error hidden"></p>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <button id="published" type="button" role="switch" aria-checked="true" aria-labelledby="published-label" aria-describedby="published-help"
+          class="relative mt-0.5 inline-flex h-6 w-11 shrink-0 rounded-full bg-civic transition-colors">
+          <span aria-hidden="true" class="absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform translate-x-5"></span>
+        </button>
+        <div>
+          <p id="published-label" class="text-sm font-semibold">Published</p>
+          <p id="published-help" class="text-xs text-muted">Published announcements are visible to everyone and send a notification. Turn this off to save a draft.</p>
+        </div>
+      </div>
+
+      <div id="progress-wrap" class="hidden">
+        <div class="flex justify-between text-sm"><span>Uploading</span><span id="progress-text">0%</span></div>
+        <div id="progress-bar" class="h-2 rounded bg-ink/10 mt-1 overflow-hidden" role="progressbar" aria-label="Upload progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progress-fill" class="h-full bg-civic" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 pt-2 border-t border-ink/10">
+        <button id="save-btn" type="submit" class="btn btn-primary mt-4">Publish announcement</button>
+        <a id="cancel-link" href="announcements.html" class="btn btn-secondary mt-4">Cancel</a>
+      </div>
+    </form>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/pages/announcement-form.js"></script>
+</body>
+</html>

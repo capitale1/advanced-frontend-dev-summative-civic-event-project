@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promos | CivicEvents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen flex flex-col">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="app-header"></div>
+
+  <main id="main" tabindex="-1" class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Promos</h1>
+        <p class="text-muted mt-1 max-w-prose">Short videos about city programmes and community events. Every promo plays with captions.</p>
+      </div>
+      <!-- ROLE GUARD (element): only admins see this -->
+      <a href="promo-form.html" data-requires="admin" class="hidden btn btn-primary">New promo</a>
+    </div>
+
+    <div class="card p-4 mb-6 grid gap-4 sm:grid-cols-[1fr_auto] items-end" role="search">
+      <div>
+        <label for="search" class="label">Search promos</label>
+        <input id="search" type="search" class="input" placeholder="Search by title">
+      </div>
+      <div data-requires="admin" class="hidden">
+        <label for="status" class="label">Status</label>
+        <select id="status" class="input">
+          <option value="all">All</option>
+          <option value="published">Published</option>
+          <option value="draft">Drafts</option>
+        </select>
+      </div>
+    </div>
+
+    <p id="results-count" tabindex="-1" class="text-sm text-muted mb-4" aria-live="polite"></p>
+    <div id="list"></div>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/pages/promos.js"></script>
+</body>
+</html>
