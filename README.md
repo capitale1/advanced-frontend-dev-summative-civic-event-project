@@ -15,3 +15,6 @@ Residents can browse and register for city events, leave feedback, listen to aud
 3. Open `http://localhost:5500` and sign in.
 
 The API base URL is set in `frontend/assets/js/config.js`.
+
+Demo video
+https://youtu.be/beOnQ1myWAc
